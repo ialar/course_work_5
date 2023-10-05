@@ -60,7 +60,6 @@ def create_db(db_name: str, db_config: dict) -> None:
 
     cur.execute(f'DROP DATABASE IF EXISTS {db_name}')
     cur.execute(f'CREATE DATABASE {db_name}')
-
     cur.close()
     conn.close()
 
@@ -96,7 +95,7 @@ def fill_db(data: list, db_name: str, db_config: dict) -> None:
     :param db_name: Название созданной базы данных.
     :param db_config: Параметры подключения к базе данных.
     """
-    conn = psycopg2.connect(dbname=db_name, **db_config)  # wait, what??
+    conn = psycopg2.connect(dbname=db_name, **db_config)
 
     with conn.cursor() as cur:
         for employer in data:
@@ -128,7 +127,6 @@ def fill_db(data: list, db_name: str, db_config: dict) -> None:
                      vacancy_data['salary']['from'],
                      vacancy_data['salary']['currency'], vacancy_data['alternate_url'])
                 )
-
     conn.commit()
     conn.close()
 
