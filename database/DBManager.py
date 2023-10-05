@@ -4,7 +4,7 @@ from src.config import db_config
 
 
 class DBManager:
-
+    """Класс, формирующий sql-запросы в БД."""
     def __init__(self):
         with psycopg2.connect(dbname='head_hunter', **db_config) as conn:
             self.connection = conn
