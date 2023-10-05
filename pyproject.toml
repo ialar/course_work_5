@@ -2,7 +2,7 @@
 name = "course-work-5"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Igor L. <jedialar@gmail.com>"]
 readme = "README.md"
 packages = [{include = "course_work_5"}]
 
