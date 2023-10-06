@@ -160,11 +160,11 @@ def run_user_commands() -> None:
         elif choice_menu == '5':
             vacancy_keyword = input('Введите ключевое слово ')  # Переменная для выбора ключевого слова
             data = db_manager.get_vacancies_with_keyword(vacancy_keyword)
-            if vacancy_keyword:
+            if not data:
+                print('По данному ключевому слову вакансий не обнаружено')
+            else:
                 for i in data:
                     print(f'Компания "{i[0]}", вакансия - {i[1]}, з/пл - от {i[2]} до {i[3]}, ссылка - {i[4]}')
-            else:
-                print('По данному ключевому слову вакансий не обнаружено')
         elif choice_menu == '6':
             break
         else:
